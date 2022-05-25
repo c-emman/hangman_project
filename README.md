@@ -71,4 +71,29 @@ This projects aim was to create a Hangman game, where the user would input lette
             print("You have", self.num_lives, "lives left.")
 ```
 ## Milestone 4
--
+- The final milestone focused on puting it all together. At this point the relevant sections of the class had been filed and all that was left was to define a final function outside the class that would loop the game until the condition of either the player running out of lives or the player fully guessing the word had been reached.
+- See below the function play_game():
+>>> python
+```python
+def play_game(word_list):
+    game = Hangman(word_list, num_lives=6)
+    
+    while game.num_lives >= 0:
+        if game.num_lives > 0 and '_' in game.word_guessed:
+            game.ask_letter()
+        elif game.num_lives > 0 and '_' not in game.word_guessed:
+            print("Well done! You've beaten the game")
+            print("The word was", ''.join(game.word))
+            break
+        elif game.num_lives == 0:
+            print("You're out of lives! Better luck next time")
+            print("The word was", ''.join(game.word))
+            break
+    pass
+```
+- Once this milestone was complete now additions could be added to the game. I added a diagram of the hangman which would spell hangman once the player had lost the game.
+
+> ![ksnip_20220525-153427](https://user-images.githubusercontent.com/105006854/170288044-34a48fb6-dc14-46a6-8131-d8f1bdefae00.png)
+
+## Conclusion
+To conclude this project worked on numerous python concepts such as classes, methods, functions, control flow and manipulation of strings, lists and loops. 
